@@ -8,5 +8,5 @@ const connection = mysql.createConnection({
     user: 'root',
     // Be sure to update with your own MySQL password!
     password: 'Lu88ockEm$',
-    database: 'personneldb',
+    database: 'personnel_DB',
 });
