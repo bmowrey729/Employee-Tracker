@@ -7,10 +7,10 @@ CREATE TABLE employee(
   first_name VARCHAR(30) NULL,
   last_name VARCHAR(30) NULL,
   role_id INT NULL,
-  manager_id INT Null,  
+  manager_id INT default Null,  
   PRIMARY KEY (id)
 );
-CREATE TABLE roll(
+CREATE TABLE role(
   id INT NOT NULL ,
   title VARCHAR(30) NULL,
   salary DECIMAL NULL,
