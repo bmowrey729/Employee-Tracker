@@ -176,16 +176,14 @@ function addRole() {
             }
         );
     });
-    // function viewRole()
-    // connection.query(
-    //     "SELECT * FROM ?",
-    //     {
-    //         role
-    //     }, 
-    //     function (err, result) {
-    //     if (err) throw err;
-    //     console.log(result);
-    //    });
+     
+}
+
+function viewRole(){
+connection.query("SELECT * FROM role", function (err, result) {
+         if (err) throw err;
+         console.table(result);
+});
 }
 connection.connect((err) => {
     if(err) throw err;
