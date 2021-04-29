@@ -5,7 +5,10 @@ const ADD_DEPARTMENT = 'Add a Department';
 const ADD_PERSONNEL = 'Add new Personnel';
 const ADD_ROLE = 'Add a new role.';
 const EXIT_TEXT = 'Exit program';
-const VIEW_ROLE = 'Pull role table data'
+const VIEW_ROLE = 'View role table data';
+const VIEW_DEPARTMENT = 'View department table data';
+const VIEW_EMPLOYEE = 'View employee table data'
+
 
 const connection = mysql.createConnection({
     // Your port; if not 3306
@@ -21,13 +24,15 @@ function start() {
     inquirer.prompt([
         {
             name: 'updateDatabase',
-            message: 'Choose table to update.',
+            message: 'Choose the application you would like to perform.',
             type: 'list',
             choices: [
                 ADD_DEPARTMENT,
                 ADD_PERSONNEL,
                 ADD_ROLE,
                 VIEW_ROLE,
+                VIEW_DEPARTMENT,
+                VIEW_EMPLOYEE,
                 EXIT_TEXT
             ]
         }
@@ -45,9 +50,17 @@ function start() {
                 // show items to user
                 addRole();
                 break;
-                case VIEW_ROLE:
+            case VIEW_ROLE:
                 // show items to user
                 viewRole();
+                break;
+            case VIEW_DEPARTMENT:
+                // show items to user
+                viewDepartment();
+                break;
+            case VIEW_EMPLOYEE:
+                // show items to user
+                viewEmployee();
                 break;
             case EXIT_TEXT:
                 console.log('Thanks for providing updated information.');
@@ -183,10 +196,28 @@ function viewRole(){
 connection.query("SELECT * FROM role", function (err, result) {
          if (err) throw err;
          console.table(result);
+         start();
 });
 }
+function viewDepartment(){
+    connection.query("SELECT * FROM department", function (err, result) {
+             if (err) throw err;
+             console.table(result);
+             start();
+    });
+}
+function viewEmployee(){
+    connection.query("SELECT * FROM employee", function (err, result) {
+             if (err) throw err;
+             console.table(result);
+             start();
+    });
+}
+
+
 connection.connect((err) => {
     if(err) throw err;
     
     start();
 });
+
