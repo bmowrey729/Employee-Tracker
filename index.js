@@ -7,7 +7,7 @@ const ADD_ROLE = 'Add a new role.';
 const EXIT_TEXT = 'Exit program';
 const VIEW_ROLE = 'View role table data';
 const VIEW_DEPARTMENT = 'View department table data';
-const VIEW_EMPLOYEE = 'View employee table data'
+const VIEW_EMPLOYEE = 'View employee table data';
 
 
 const connection = mysql.createConnection({
