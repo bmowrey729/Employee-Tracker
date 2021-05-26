@@ -10,6 +10,6 @@ data in SQL database using node.js and Inguirer. With this application I am able
 - View data from the role table
 - View data from the department table
 
-[URL] (https://github.com/bmowrey729/Employee-Tracker)
+[Video] (https://drive.google.com/file/d/1F5n7D3NrjX7OO--6z_fKamUegPV-SxUS/view?usp=sharing)
 
 ![Screen Shot ](assets/empTrack.PNG)
